@@ -1,11 +1,11 @@
+import { config } from '../../config';
+import { logger } from '../../shared/logger';
 import { createApp } from './app';
-
-const PORT = Number(process.env.PORT) || 3000;
 
 export const startServer = (): void => {
   const app = createApp();
 
-  app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+  app.listen(config.port, () => {
+    logger.info(`Server running on http://localhost:${config.port}`);
   });
 };
