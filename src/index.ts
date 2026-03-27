@@ -1,4 +1,7 @@
-import './config'; // must be first — loads and validates env vars before anything else
+import './config';
 import { startServer } from './infrastructure/http/server';
 
-startServer();
+startServer().catch(err => {
+    console.error('Fatal startup error: ', err)
+    process.exit(1)
+});
