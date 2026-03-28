@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { auth } from "../middlewares/auth";
-import * as taskController from "../controllers/task.controller";
-import { validate } from "../middlewares/validate";
-import { createTaskSchema, updateTaskSchema } from "../../shared/validators/task.schema";
+import { auth } from "../middlewares/auth.js";
+import * as taskController from "../controllers/task.controller.js";
+import { validate } from "../middlewares/validate.js";
+import { createTaskSchema, updateTaskSchema } from "../../shared/validators/task.schema.js";
 
 const router = Router();
 

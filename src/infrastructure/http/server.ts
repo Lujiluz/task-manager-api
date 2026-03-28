@@ -1,7 +1,7 @@
-import { config } from '../../config';
-import { logger } from '../../shared/logger';
-import { connectWithRetry, prisma } from '../database/prisma';
-import { createApp } from './app';
+import { config } from '../../config/index.js';
+import { logger } from '../../shared/logger.js';
+import { connectWithRetry, prisma } from '../database/prisma.js';
+import { createApp } from './app.js';
 
 export const startServer = async (): Promise<void> => {
   await connectWithRetry();

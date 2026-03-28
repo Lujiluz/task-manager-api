@@ -1,5 +1,5 @@
-import { prisma } from "../../infrastructure/database/prisma";
-import { AppError } from "../../shared/errors/AppError";
+import { prisma } from "../../infrastructure/database/prisma.js";
+import { AppError } from "../../shared/errors/AppError.js";
 
 export const create = (data: { title: string; description?: string; completed?: boolean }, userId: string) => prisma.task.create({ data: { ...data, userId } });
 

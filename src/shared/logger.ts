@@ -18,4 +18,4 @@ export const logger = pino(
 );
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const httpLogger = pinoHttp({ logger: logger as any });
+export const httpLogger = (pinoHttp as any)({ logger });

@@ -1,5 +1,5 @@
 import { RequestHandler } from "express";
-import { AppError } from "../../shared/errors/AppError";
+import { AppError } from "../../shared/errors/AppError.js";
 import { ZodSchema } from "zod";
 
 export const validate =

@@ -1,7 +1,7 @@
-import { prisma } from "../../infrastructure/database/prisma";
-import { AppError } from "../../shared/errors/AppError";
-import { signToken } from "../../shared/utils/jwt";
-import { compare, hash } from "../../shared/utils/password";
+import { prisma } from "../../infrastructure/database/prisma.js";
+import { AppError } from "../../shared/errors/AppError.js";
+import { signToken } from "../../shared/utils/jwt.js";
+import { compare, hash } from "../../shared/utils/password.js";
 
 export const register = async (data: { name: string; email: string; password: string }) => {
   const hashed = await hash(data.password);

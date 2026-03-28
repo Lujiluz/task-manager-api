@@ -2,6 +2,7 @@
   "name": "task-manager-api",
   "version": "1.0.0",
   "description": "Task Manager REST API",
+  "type": "module",
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",

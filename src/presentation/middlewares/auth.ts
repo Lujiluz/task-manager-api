@@ -1,6 +1,6 @@
 import { RequestHandler } from "express";
-import { AppError } from "../../shared/errors/AppError";
-import { verifyToken } from "../../shared/utils/jwt";
+import { AppError } from "../../shared/errors/AppError.js";
+import { verifyToken } from "../../shared/utils/jwt.js";
 
 declare global {
   namespace Express {

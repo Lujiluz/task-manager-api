@@ -2,12 +2,14 @@ import express, { Application } from "express";
 import helmet from "helmet";
 import cors from "cors";
 import path from "path";
+import { fileURLToPath } from "url";
 import { readFileSync } from "fs";
 import yaml from "js-yaml";
 import swaggerUi from "swagger-ui-express";
-import { httpLogger } from "../../shared/logger";
-import { errorHandler } from "../../presentation/middlewares/errorHandler";
-import router from "../../presentation/routes";
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+import { httpLogger } from "../../shared/logger.js";
+import { errorHandler } from "../../presentation/middlewares/errorHandler.js";
+import router from "../../presentation/routes/index.js";
 
 export const createApp = (): Application => {
   const app = express();

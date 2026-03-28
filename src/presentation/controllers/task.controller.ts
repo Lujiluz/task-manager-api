@@ -1,5 +1,5 @@
 import { RequestHandler } from "express";
-import * as taskService from "../../application/services/task.service";
+import * as taskService from "../../application/services/task.service.js";
 
 export const create: RequestHandler = async (req, res) => {
   const task = await taskService.create(req.body, req.user!.id);

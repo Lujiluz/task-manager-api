@@ -1,8 +1,8 @@
 import { ErrorRequestHandler } from "express";
-import { AppError } from "../../shared/errors/AppError";
-import { logger } from "../../shared/logger";
-import { config } from "../../config";
-import { Prisma } from "../../generated/prisma/client";
+import { AppError } from "../../shared/errors/AppError.js";
+import { logger } from "../../shared/logger.js";
+import { config } from "../../config/index.js";
+import { Prisma } from "../../generated/prisma/client.js";
 
 export const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
   // AppError — expected, operational errors

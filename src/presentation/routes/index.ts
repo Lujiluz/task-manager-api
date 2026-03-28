@@ -1,7 +1,7 @@
 import { Router } from "express";
-import pingRouter from "./ping.route";
-import userRouter from "./user.route";
-import taskRouter from "./task.route";
+import pingRouter from "./ping.route.js";
+import userRouter from "./user.route.js";
+import taskRouter from "./task.route.js";
 
 const router = Router();
 

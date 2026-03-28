@@ -1,7 +1,7 @@
 import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
-import { PrismaClient } from "../../generated/prisma/client";
-import { logger } from "../../shared/logger";
+import { PrismaClient } from "../../generated/prisma/client.js";
+import { logger } from "../../shared/logger.js";
 
 const MAX_RETRIES = 5;
 const RETRY_DELAY_MS = 2000;
