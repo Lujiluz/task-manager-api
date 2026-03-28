@@ -17,14 +17,19 @@ export const createApp = (): Application => {
   // first — logs all incoming requests before any middleware can short-circuit
   app.use(httpLogger);
 
-  const specPath = path.join(__dirname, "../../../docs/openapi.yaml");
-  const rawSpec = yaml.load(readFileSync(specPath, "utf8"));
-  if (!rawSpec || typeof rawSpec !== "object" || Array.isArray(rawSpec)) {
-    throw new Error(`Failed to parse OpenAPI spec at ${specPath}`);
+  if (process.env.NODE_ENV !== "production") {
+    try {
+      const specPath = path.join(process.cwd(), "docs", "openapi.yaml");
+      const rawSpec = yaml.load(readFileSync(specPath, "utf8"));
+      const spec = rawSpec as object;
+
+      app.get("/docs/openapi.json", (_req, res) => res.json(spec));
+      app.use("/docs", swaggerUi.serve, swaggerUi.setup(spec));
+      console.log("Swagger docs initialized at /docs");
+    } catch (error) {
+      console.error("Swagger failed to load:", error);
+    }
   }
-  const spec = rawSpec as object;
-  app.get("/docs/openapi.json", (_req, res) => res.json(spec));
-  app.use("/docs", swaggerUi.serve, swaggerUi.setup(spec));
 
   app.use(helmet());
   app.use(cors());
