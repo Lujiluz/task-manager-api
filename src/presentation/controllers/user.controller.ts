@@ -32,5 +32,6 @@ export const remove: RequestHandler = async (req, res) => {
 };
 
 export const getUserTasks: RequestHandler = async (req, res) => {
-  await userService.getUserTask(req.params.id as string);
+  const tasks = await userService.getUserTask(req.params.id as string);
+  res.json(tasks);
 };
