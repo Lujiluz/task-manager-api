@@ -30,3 +30,7 @@ export const remove: RequestHandler = async (req, res) => {
   await userService.remove(req.params.id as string);
   res.status(204).send();
 };
+
+export const getUserTasks: RequestHandler = async (req, res) => {
+  await userService.getUserTask(req.params.id as string);
+};

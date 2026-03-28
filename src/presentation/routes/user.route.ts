@@ -11,5 +11,6 @@ router.get("/", userController.getAll);
 router.get("/:id", userController.getById);
 router.put("/:id", validate(updateUserSchema), userController.update);
 router.delete("/:id", userController.remove);
+router.get("/:id/tasks", userController.getUserTasks);
 
 export default router;
