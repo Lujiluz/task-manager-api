@@ -2,8 +2,8 @@
 
 REST API untuk manajemen tugas (task) berbasis Express 5 dengan autentikasi JWT. Dibangun menggunakan Clean Architecture dengan TypeScript, Prisma ORM, dan PostgreSQL.
 
-**Live URL:** https://luji-space-task-manager.vercel.app
-**Frontend Github Repository:** https://github.com/Lujiluz/task-manager-fe
+- **Live URL:** https://luji-space-task-manager.vercel.app
+- **Frontend Github Repository:** https://github.com/Lujiluz/task-manager-fe
 
 ---
 
