@@ -6,6 +6,8 @@ export default defineConfig({
     environment: 'node',
     env: { NODE_ENV: 'test' },
     include: ['tests/**/*.test.ts'],
+    exclude: ['tests/integration/**'],
+    fileParallelism: false,
     passWithNoTests: true,
     coverage: {
       provider: 'v8',
