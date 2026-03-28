@@ -141,7 +141,6 @@ Setelah berhasil, database memiliki dua tabel: `User` dan `Task`.
 Dokumentasi interaktif (Swagger UI) tersedia di:
 
 - **Local:** `http://localhost:3000/docs`
-- **Live:** `https://task-manager-api-p5lz.onrender.com/docs`
 
 Base URL: `http://localhost:3000/api`
 
